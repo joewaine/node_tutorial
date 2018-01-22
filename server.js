@@ -1,10 +1,22 @@
 var http = require('http');
 
-http.createServer(function(request, response){
 
 
-response.writeHead(200, {'content-type': 'text/plain'});
-response.write('hello world');
-response.end();
+function onRequest(request,response){
+    response.writeHead(200, {'content-type': 'text/plain'});
+    response.write('hello world');
+    response.end();
+}
 
-}).listen(8888);
+http.createServer(onRequest).listen(8888);
+
+
+// function say(word) {
+// console.log(word);
+// }
+
+// function execute(someFunction, value){
+//   someFunction(value);
+// }
+
+// execute(say, "Hello");
